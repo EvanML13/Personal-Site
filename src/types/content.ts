@@ -1,7 +1,13 @@
+export interface ContactInfo {
+    name: string;
+    email: string;
+    linkedin: string;
+    github: string;
+}
+
 export interface TechnicalSkills {
-    language: string[]
-    operatingSystem: string[]
-    developmentTool: string[]
+    category: string;
+    skills: string[]; 
 }
 
 export interface EducationItem {
