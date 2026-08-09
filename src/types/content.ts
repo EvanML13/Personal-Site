@@ -33,3 +33,16 @@ export interface ExperienceItem {
     location: string;
     bullets: string[]; 
 }
+
+export interface ReflectionSection {
+    header: string;
+    content: string;
+}
+
+export interface Goal {
+    title: string;
+    description: string;
+    relatedGoal: string[];
+    achived: boolean;
+    reflection: string;
+}
