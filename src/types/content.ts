@@ -12,16 +12,16 @@ export interface TechnicalSkills {
 
 export interface EducationItem {
     institution: string;
-    dates: string;
+    dateRange: string;
     major: string;
     minor: string;
 }
 
 export interface Project {
     title: string;
-    date: string; 
+    year: string; 
     techStack: string[];
-    bullets: string[];
+    description: string;
     link: string | null;
     repoUrl: string;
 }
