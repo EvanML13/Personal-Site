@@ -18,7 +18,7 @@ export const skills: TechnicalSkills[] = [
     },
     {
         category: "Developer Tools",
-        skills: ["Git", "VS Code", "Docker", "PostgreSQL", "PostGIS", "GA4", "LookerStudio", "PowerBI", "Pantheon", "Excel", "SharePoint", "Microsoft Office"]
+        skills: ["Git", "VS Code", "Docker", "PostgreSQL", "PostGIS", "GA4", "Data Studio", "PowerBI", "Pantheon", "Excel", "SharePoint", "Microsoft Office"]
     },
 ];
 
@@ -55,9 +55,9 @@ export const experience: ExperienceItem[] = [
         role: "Website Coordinator / Web Analyst Co-op",
         location: "Guelph, Ontario",
         bullets: [
-            "Developed, updated, and maintained web content servicing 40,000+ students, facility, and visitors at the University of Guelph, across Drupal, WordPress, and SharePoint, applying HTML/CSS, UX/UI principles, SEO practices, and AODA/WCAG 2.0 Level AA accessibility standards.",
-            "Configured web analytics implementations using Google Analytics 4 (GA4), Google Tag Manager, and Google Search Console, implementing and validating events, events, conversions, and key interactions to ensure accurate website performance data.",
-            "Developed and maintained Looker Studio dashboards and automated reports, analyzing user behaviour and web performance data for departments across the University of Guelph campus to identify usability issues, engagement opportunities, and actionable recommendations.",
+            "Improved the University of Guelph's web experience for 40,000+ students, faculty, staff, and visitors by creating and optimizing content across Drupal, WordPress, and SharePoint using HTML/CSS, UX/UI, SEO, AODA, and WCAG 2.0 Level AA accessibility standards.",
+            "Enhanced the accuracy and reliability of website performance data by implementing, validating, and troubleshooting GA4 and Google Tag Manager events, conversions, and key interactions, enabling data-driven evaluation of website and marketing performance.",
+            "Enabled data-driven website and marketing decisions across campus departments by developing Data Studio dashboards and analytics reports that analyze user behavior, engagement, and web performance to identify usability issues, optimization opportunities, and actionable recommendations.",
         ],
     },
     {
@@ -67,7 +67,7 @@ export const experience: ExperienceItem[] = [
         location: "Guelph, Ontario",
         bullets: [
             "Digitized and processed large volumes of physical records using document scanning and Optical Character Recognition technologies, converting paper-based information into searchable, structured digital records.",
-            "Maintained high accuracy, consistency, and compliance with organizational record keeping standards within Microsoft SharePoint, OneDrive, Adobe Acrobat, and Excel.",
+            "Maintained high accuracy, consistency, and compliance with organizational record-keeping standards within Microsoft SharePoint, OneDrive, Adobe Acrobat, and Excel.",
             "Troubleshot and resolved document scanning, OCR processing, file formatting, and data integrity issues, improving overall workflow efficiency and reliability.",
             "Collaborated across departments to support website content updates, digital communications, and organizational projects while maintaining accurate documentation and delivering administrative and technical support."
         ],
