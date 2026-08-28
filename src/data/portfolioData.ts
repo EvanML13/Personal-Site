@@ -22,12 +22,14 @@ export const skills: TechnicalSkills[] = [
     },
 ];
 
-export const education: EducationItem = {
-    institution: "University of Guelph",
-    dateRange: "Sep. 2024 - April 2029",
-    major: "Bachelor of Computing, Computer Science (Co-op)",
-    minor: "Completing an Area of Emphasis in Artificial Intelligence",
-};
+export const education: EducationItem[] = [
+    {
+        institution: "University of Guelph",
+        dateRange: "Sep. 2024 - April 2029",
+        major: "Bachelor of Computing, Computer Science (Co-op)",
+        details: ["Completing an Area of Emphasis in Artificial Intelligence"],
+    },
+];
 
 export const projects: Project[] = [
     {

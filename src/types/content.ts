@@ -14,7 +14,7 @@ export interface EducationItem {
     institution: string;
     dateRange: string;
     major: string;
-    minor: string;
+    details: string[];
 }
 
 export interface Project {
