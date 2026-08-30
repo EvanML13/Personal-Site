@@ -34,7 +34,7 @@ export const education: EducationItem[] = [
         dateRange: "Sept. 2020 - June 2024",
         major: "High School Diploma",
         details: null,
-    }
+    },
 ];
 
 export const projects: Project[] = [

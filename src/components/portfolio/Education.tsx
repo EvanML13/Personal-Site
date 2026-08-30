@@ -13,11 +13,13 @@ export default function Education() {
                             <span className="text-sm text-slate-400">{edu.dateRange}</span>
                         </div>
                         <p className="text-slate-300 mt-1">{edu.major}</p>
-                        <ul className="mt-3 space-y-1">
-                            {edu.details.map((d) => (
-                                <li key={d} className="text-sm text-slate-400">• {d}</li>
-                            ))}
-                        </ul>
+                        {edu.details && edu.details.length > 0 && (
+                            <ul className="mt-3 space-y-1">
+                                {edu.details.map((d) => (
+                                    <li key={d} className="text-sm text-slate-400">• {d}</li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 ))}
             </section>
