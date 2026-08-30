@@ -29,6 +29,12 @@ export const education: EducationItem[] = [
         major: "Bachelor of Computing, Computer Science (Co-op)",
         details: ["Completing an Area of Emphasis in Artificial Intelligence"],
     },
+    {
+        institution: "Preston High School",
+        dateRange: "Sept. 2020 - June 2024",
+        major: "High School Diploma",
+        details: null,
+    }
 ];
 
 export const projects: Project[] = [
