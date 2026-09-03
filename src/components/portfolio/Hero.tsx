@@ -12,7 +12,7 @@ export default function Hero() {
                 {contactInfo.name}
             </h1>
             <p className="mt-4 text-lg text-slate-400 max-w-xl leading-relaxed">
-                Computer Science Honors Co-op Student at the University of Guelph | Website Coordinator / Web Analyst Intern at the University of Guelph | Focused on AI and Full-Stack Development |  
+                Computer Science Honors Co-op Student at the University of Guelph | Website Coordinator / Web Analyst Intern at the University of Guelph |  {/* Focused on AI and Full-Stack Development | */}
             </p>
         </section>
     );
