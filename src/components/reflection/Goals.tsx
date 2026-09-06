@@ -25,15 +25,15 @@ export default function Goals() {
                                 )}
                                 <div>
                                     <h3 className="text-white font-medium">{goal.description}</h3>
-                                    <p className="text-sm text-slate-400 mt-1 leading-relaxed">[{goal.title}]</p>
-                                    <p className="text-sm text-slate-300 mt-2 leading-relaxed">{goal.reflection}</p>
-                                </div>
-                                <ul className="mt-3 space-y-1.5">
-                                    {goal.relatedGoal.map((b) =>(
-                                        <li key={b} className="text-sm text-slate-400 leading-relaxed">• {b}</li>
+                                    <p className="text-sm text-slate-400 mt-1">[{goal.title}]</p>
+                                    <ul className="mt-3 space-y-1.5">
+                                        {goal.relatedGoal.map((b) =>(
+                                            <li key={b} className="text-sm text-slate-300 mt-4 leading-relaxed">• {b}</li>
 
-                                    ))}
-                                </ul>
+                                        ))}
+                                    </ul>
+                                    <p className="text-sm text-slate-300 mt-4">{goal.reflection}</p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
