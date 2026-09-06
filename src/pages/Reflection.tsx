@@ -1,10 +1,24 @@
 import PageTransition from "../components/layout/PageTransition";
+import JobDescription from "../components/reflection/JobDescription";
+import ProseSection from "../components/reflection/ProseSection";
+import Goals from "../components/reflection/Goals";
+import {
+    abstract,
+    employerInfo,
+    conclusion,
+    acknowledgements
+} from "../data/reflectionData"
 
 export default function Reflection() {
     return (
         <PageTransition>
-            <div className="min-h-screen flex items-center justify-center text-white">
-                <h1 className="text-4xl font-bold">Reflection</h1>
+            <div className="min-h-screen">
+                <ProseSection {...abstract} />
+                <ProseSection {...employerInfo} />
+                <Goals />
+                <JobDescription />
+                <ProseSection {...conclusion} />
+                <ProseSection {...acknowledgements} />
             </div>
         </PageTransition>
     );    

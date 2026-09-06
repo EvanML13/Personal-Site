@@ -11,7 +11,7 @@ function AnimateRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/relection" element={<Reflection />} />
+        <Route path="/reflection" element={<Reflection />} />
       </Routes>
     </AnimatePresence>
   );

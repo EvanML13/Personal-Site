@@ -46,3 +46,16 @@ export interface Goal {
     achived: boolean;
     reflection: string;
 }
+
+export interface ContentBlock {
+    type: "text" | "image";
+    text?: string;
+    src?: string;
+    alt?: string;
+    caption?: string;
+}
+
+export interface JobDescriptionData {
+    header: string;
+    blocks: ContentBlock[];
+}
