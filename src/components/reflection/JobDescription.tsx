@@ -8,6 +8,28 @@ type SelectedImage = { src: string; alt?: string; caption?: string };
 export default function JobDescription() {
 
     const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(null);
+    const [zoom, setZoom] = useState({ scale: 1, originX: 50, originY: 50 });
+
+    // Reset Zoom Whenever A New Image Is Opened
+    useEffect(() => {
+        setZoom({ scale: 1, originX: 50, originY: 50 });
+    }, [selectedImage]);
+
+    function handleImageClick(e: React.MouseEvent<HTMLImageElement>) {
+
+        // Reset If The Image Is Already Zoomed In On
+        if (zoom.scale > 1) {
+            setZoom({ scale: 1, originX: 50, originY: 50 });
+            return;
+        }
+
+        // Figue Out Where On The Image (As A %) The User Clicked And Zoom Accordingly
+        const rect = e.currentTarget.getBoundingClientRect();
+        const originX = ((e.clientX - rect.left) / rect.width) * 100;
+        const originY = ((e.clientY - rect.top) / rect.height) * 100;
+        setZoom({ scale: 2.2, originX, originY })
+    }
+
 
     // Let User Escape The Lightbox By Clicking The Backdrop Or Using The Escape Key
     useEffect(() => {
@@ -80,10 +102,16 @@ export default function JobDescription() {
                             onClick={(e) => e.stopPropagation()} // Don't Close When Clicking The Image Itself
                             className="max-w-4xl max-h-[95vh]"        
                         >
-                            <img
+                            <motion.img
                                 src={selectedImage.src}
                                 alt={selectedImage.alt}
-                                className="max-h-[95vh] w-auto rounded-xl"
+                                onClick={handleImageClick}
+                                animate={{
+                                    scale: zoom.scale,
+                                    transformOrigin: `${zoom.originX}% ${zoom.originY}%`,
+                                }}
+                                transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+                                className={`max-h-[85vh] w-auto ${zoom.scale > 1 ? "cursor-zoom-out" : "cursor-zoom-in"}`}
                             />
                             {selectedImage.caption && (
                                 <figcaption className="text-sm text-slate-400 mt-3 text-center">
