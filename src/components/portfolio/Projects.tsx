@@ -5,7 +5,7 @@ import Reveal from "../layout/Reveal";
 export default function Projects() {
     return (
         <Reveal>
-            <section className="px-6 md:px-16 py-12">
+            <section className="px-6 md:px-16 py-1">
                 <h2 className="text-2xl font-semibold text-white mb-6">Projects</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                     {projects.map((projects) => (
