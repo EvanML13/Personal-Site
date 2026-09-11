@@ -14,7 +14,7 @@ const links = [
 export default function Contact() {
     return (
         <Reveal>
-            <section className="px-6 md:px-16 py-12 flex flex-wrap gap-4">
+            <section id="contact" className="px-6 md:px-16 py-12 flex flex-wrap gap-4">
                 {links.map(({ href, label, icon: Icon }) => (
                     <motion.a
                         key={label}

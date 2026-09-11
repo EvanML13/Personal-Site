@@ -1,20 +1,45 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { contactInfo } from "../../data/portfolioData";
 
 export default function Hero() {
 
-    const ref = useRef<HTMLElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
+    const textRef = useRef<HTMLElement>(null);
+    const [slideDistance, setSlideDistance] = useState(80); // Fallback Before Measuring
+
+    useLayoutEffect(() => {
+        // Function To Measure The Distance Between The Bottom Of The Text And Top Of The Contact Info For Sliding Animation
+        function measure() {
+            const textEl = textRef.current;
+            const contactEl = document.getElementById("contact");
+            if (!textEl || !contactEl) return;
+
+            const textBottom = textEl.getBoundingClientRect().bottom + window.scrollY;
+            const contactTop = contactEl.getBoundingClientRect().top + window.scrollY;
+            setSlideDistance(Math.max(contactTop - textBottom, 0));
+        }
+
+        measure();
+        window.addEventListener("resize", measure);
+        return () => window.removeEventListener("resize", measure);
+    }, []);
+
     const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start start", "end start"] // Tack From Section Entering To Fully Leaving The Top
+        target: sectionRef,
+        offset: ["start start", "end start"],
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
-    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+    const SLIDE_MULTIPLIER = 3.3;
+
+    const y = useTransform(scrollYProgress, [0, 1], [0, slideDistance * SLIDE_MULTIPLIER]);
+    const opacity = useTransform(scrollYProgress, [0.5, 1], [1, 0]);
 
     return (
-        <section ref={ref} className="min-h-[70vh] flex flex-col justify-center items-start px-6 md:px-16 max-w-4xl">
+        <section 
+            ref={sectionRef} 
+            className="min-h-[70vh] flex flex-col justify-center items-start px-6 md:px-16 max-w-4xl"
+        >
             <motion.div style={{ y, opacity }}>
                 <h1
                     className="font-bold text-white"
