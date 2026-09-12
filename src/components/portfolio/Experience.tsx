@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { experience } from "../../data/portfolioData";
 import Reveal from "../layout/Reveal";
 
@@ -8,7 +9,12 @@ export default function Experience(){
                 <h2 className="text-2xl font-semibold text-white mb-6">Experience</h2>
                 <div className="space-y-6">
                     {experience.map((job) => (
-                        <div key={job.role + job.organization} className="rounded-2xl bg-white/5 border border-white/10 p-6">
+                        <motion.div 
+                            key={job.role + job.organization} 
+                            whileHover={{ y: -2 }}
+                            transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+                            className="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/[0.07] transition-colors"
+                        >
                             <div className="flex justify-between flex-wrap gap-2">
                                 <div>
                                     <h3 className="text-lg font-medium text-white">{job.role}</h3>
@@ -21,7 +27,7 @@ export default function Experience(){
                                     <li key={b} className="text-sm text-slate-400 leading-relaxed">• {b}</li>
                                 ))}
                             </ul>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </section>
