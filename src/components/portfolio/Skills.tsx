@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { skills } from "../../data/portfolioData";
 import Reveal from "../layout/Reveal";
+import { withAlpha } from "../../lib/color";
+import { skillColors, defaultSkillColor } from "../../data/skillColors";
 
 export default function Skills() {
     const [activeCategory, setActiveCategory] = useState<string>("All");
@@ -42,19 +44,27 @@ export default function Skills() {
 
                 {/* Skill Pills Reflecting With Layout Animation When Filtered */}
                 <motion.div layout className="flex flex-wrap gap-2">
-                    {visibleSkills.map((skill) => (
-                        <motion.span
-                            key={skill}
-                            layout
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            transition={reduceMotion ? { duration: 0.15 } : { type: "spring", bounce: 0.15, duration: 0.35 }}
-                            className="px-3 py-1.5 text-sm rounded-full bg-white/5 text-slate-200 border border-white/10"
-                        >
-                            {skill}
-                        </motion.span>
-                    ))}
+                    {visibleSkills.map((skill) => {
+                        const color = skillColors[skill] ?? defaultSkillColor;
+                        return (
+                            <motion.span
+                                key={skill}
+                                layout
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                transition={reduceMotion ? { duration: 0.15 } : { type: "spring", bounce: 0.15, duration: 0.35 }}
+                                style={{
+                                    backgroundColor: withAlpha(color, 0.12),
+                                    borderColor: withAlpha(color, 0.4),
+                                    color: color,
+                                }}
+                                className="px-3 py-1.5 text-sm rounded-full border"
+                            >
+                                {skill}
+                            </motion.span>
+                        );
+                    })}
                 </motion.div>
             </section>
         </Reveal>

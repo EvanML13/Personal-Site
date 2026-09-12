@@ -1,0 +1,31 @@
+export const skillColors: Record<string, string> = {
+  Python: "#3776AB",
+  Java: "#E76F00",
+  C: "#A8B9CC",
+  JavaScript: "#F7DF1E",
+  TypeScript: "#3178C6",
+  Go: "#00ADD8",
+  SQL: "#4479A1",
+  "HTML/CSS": "#E34F26",
+  PHP: "#E03131",
+  R: "#276DC3",
+  React: "#61DAFB",
+  WordPress: "#21759B",
+  "Next.js": "#EDEDED",
+  Drupal: "#0678BE",
+  Git: "#F05032",
+  "VS Code": "#007ACC",
+  Docker: "#2496ED",
+  PostgreSQL: "#336791",
+  PostGIS: "#3E9C6D",
+  GA4: "#F9AB00",
+  "Data Studio": "#4285F4",
+  PowerBI: "#F2C811",
+  Pantheon: "#FFC107",
+  Excel: "#217346",
+  SharePoint: "#8764B8",
+  "Microsoft Office": "#D83B01",
+};
+
+// For Anything Not Mapped
+export const defaultSkillColor = "#94A3B8";
