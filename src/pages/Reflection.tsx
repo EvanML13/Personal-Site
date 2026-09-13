@@ -4,7 +4,6 @@ import ProseSection from "../components/reflection/ProseSection";
 import Goals from "../components/reflection/Goals";
 import ReflectionProgress from "../components/reflection/ReflectionProgress";
 import { abstract, employerInfo, conclusion, acknowledgements } from "../data/reflectionData"
-import { label } from "framer-motion/client";
 
 const sections = [
   { id: "abstract", label: "Abstract" },
