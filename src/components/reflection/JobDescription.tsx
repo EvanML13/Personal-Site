@@ -43,7 +43,7 @@ export default function JobDescription() {
     return (
         <>
             <Reveal>
-                <section className="px-6 md:px-16 py-12 max-w-3xl">
+                <section id="job-description" className="py-20">
                     <h2 className="text-2xl font-semibold text-white mb-6">{jobDescription.header}</h2>
                     <div className="space-y-6">
                         {jobDescription.blocks.map((block, i) =>
