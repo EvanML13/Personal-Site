@@ -11,12 +11,14 @@ export default function Portfolio() {
     return (
         <PageTransition>
             <div className="min-h-screen">
-                <Hero />
-                <Contact />
-                <Education />
-                <Skills />
-                <Experience />
-                <Projects />            
+                <div className="min-h-screen pb-24">
+                    <Hero />
+                    <Contact />
+                    <Education />
+                    <Skills />
+                    <Experience />
+                    <Projects />           
+                </div>
             </div>
         </PageTransition>
     );

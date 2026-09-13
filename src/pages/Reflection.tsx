@@ -17,8 +17,8 @@ const sections = [
 export default function Reflection() {
     return (
         <PageTransition>
-            <div className="min-h-screen grid lg:grid-cols-3 gap-8 px-6 md:px-16 pb-24-h-screen">
-                <div className="lg:col-span-2">
+            <div className="min-h-screen grid lg:grid-cols-5 gap-8 px-6 md:px-16 pb-8">
+                <div className="lg:col-span-4">
                     <ProseSection id="abstract" {...abstract} />
                     <ProseSection id="employer-info" {...employerInfo} />
                     <Goals />
