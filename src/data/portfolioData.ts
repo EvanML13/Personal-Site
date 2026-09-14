@@ -32,7 +32,7 @@ export const education: EducationItem[] = [
     {
         institution: "Preston High School",
         dateRange: "Sept. 2020 - June 2024",
-        major: "High School Diploma",
+        major: "Ontario Secondary School Diploma",
         details: null,
     },
 ];
